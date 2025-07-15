@@ -5,14 +5,12 @@ export async function getServerSideProps() {
   return {
     props: {
       time: new Date().toISOString(),
-      envVar: process.env.SOME_PROD_VAR,
     },
   };
 }
 
 export default function Page({
   time,
-  envVar,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <div>
@@ -20,7 +18,7 @@ export default function Page({
         <title>OpenNext head</title>
         <meta
           property="og:title"
-          content={`OpenNext pages router head ${envVar}`}
+          content={`OpenNext pages router head`}
         />
         <meta property="time" content={time} />
         <meta
